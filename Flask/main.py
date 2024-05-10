@@ -6,7 +6,7 @@ import os
 load_dotenv()
 openai_key = os.getenv("openai_key")
 github_token = os.getenv("githubToken")
-
+conversation_history = []
 client = OpenAI(api_key=openai_key)
 g = Github(github_token)
 

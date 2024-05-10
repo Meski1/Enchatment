@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+</head>
+<body>
+    <h1>Welcome to the Chat Interface</h1>
+    <form method="POST">
+        <label for="user_input">Enter your message:</label>
+        <input type="text" id="user_input" name="user_input" required>
+        <button type="submit">Send</button>
+    </form>
+    <form method="POST">
+        <label for="repo_name">Repository Name:</label>
+        <input type="text" id="repo_name" name="repo_name" placeholder="username/repo">
+        <label for="issue_number">Issue Number:</label>
+        <input type="number" id="issue_number" name="issue_number" required>
+        <button type="submit" name="user_input" value="gitchat">Fetch Issue</button>
+        <button type="submit" name="user_input" value="gistpush">Create Gist</button>
+    </form>
+    <hr>
+    <h2>Conversation History</h2>
+    <ul>
+        {% for message in conversation_history %}
+            <li><strong>{{ message.role }}:</strong> {{ message.content }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
